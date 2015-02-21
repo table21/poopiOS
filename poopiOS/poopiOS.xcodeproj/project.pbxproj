@@ -14,6 +14,7 @@
 		39852E361A98969C005DE617 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39852E351A98969C005DE617 /* Images.xcassets */; };
 		39852E391A98969C005DE617 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39852E371A98969C005DE617 /* LaunchScreen.xib */; };
 		39852E451A98969C005DE617 /* poopiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39852E441A98969C005DE617 /* poopiOSTests.m */; };
+		39852E501A98A54B005DE617 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39852E4F1A98A54B005DE617 /* SettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		39852E3E1A98969C005DE617 /* poopiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = poopiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		39852E431A98969C005DE617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39852E441A98969C005DE617 /* poopiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = poopiOSTests.m; sourceTree = "<group>"; };
+		39852E4E1A98A54B005DE617 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		39852E4F1A98A54B005DE617 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				39852E2F1A98969C005DE617 /* ViewController.h */,
 				39852E301A98969C005DE617 /* ViewController.m */,
 				39852E321A98969C005DE617 /* Main.storyboard */,
+				39852E4E1A98A54B005DE617 /* SettingViewController.h */,
+				39852E4F1A98A54B005DE617 /* SettingViewController.m */,
 				39852E351A98969C005DE617 /* Images.xcassets */,
 				39852E371A98969C005DE617 /* LaunchScreen.xib */,
 				39852E281A98969C005DE617 /* Supporting Files */,
@@ -222,6 +227,7 @@
 				39852E311A98969C005DE617 /* ViewController.m in Sources */,
 				39852E2E1A98969C005DE617 /* AppDelegate.m in Sources */,
 				39852E2B1A98969C005DE617 /* main.m in Sources */,
+				39852E501A98A54B005DE617 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
