@@ -11,6 +11,7 @@
 @interface Bathroom : NSObject
 
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *directions;
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
 

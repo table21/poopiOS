@@ -15,6 +15,7 @@
 		39852E391A98969C005DE617 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39852E371A98969C005DE617 /* LaunchScreen.xib */; };
 		39852E451A98969C005DE617 /* poopiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39852E441A98969C005DE617 /* poopiOSTests.m */; };
 		E7AC75851A989D0E00072E97 /* Bathroom.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AC75841A989D0E00072E97 /* Bathroom.m */; };
+		E7AC75891A98AB1800072E97 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AC75881A98AB1800072E97 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		39852E441A98969C005DE617 /* poopiOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = poopiOSTests.m; sourceTree = "<group>"; };
 		E7AC75831A989D0E00072E97 /* Bathroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bathroom.h; sourceTree = "<group>"; };
 		E7AC75841A989D0E00072E97 /* Bathroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bathroom.m; sourceTree = "<group>"; };
+		E7AC75871A98AB1800072E97 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		E7AC75881A98AB1800072E97 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				39852E2F1A98969C005DE617 /* MapViewController.h */,
 				39852E301A98969C005DE617 /* MapViewController.m */,
 				39852E321A98969C005DE617 /* Main.storyboard */,
+				E7AC75871A98AB1800072E97 /* SettingsViewController.h */,
+				E7AC75881A98AB1800072E97 /* SettingsViewController.m */,
 				39852E351A98969C005DE617 /* Images.xcassets */,
 				39852E371A98969C005DE617 /* LaunchScreen.xib */,
 				E7AC75861A989D1300072E97 /* Models */,
@@ -242,6 +247,7 @@
 			files = (
 				39852E311A98969C005DE617 /* MapViewController.m in Sources */,
 				E7AC75851A989D0E00072E97 /* Bathroom.m in Sources */,
+				E7AC75891A98AB1800072E97 /* SettingsViewController.m in Sources */,
 				39852E2E1A98969C005DE617 /* AppDelegate.m in Sources */,
 				39852E2B1A98969C005DE617 /* main.m in Sources */,
 			);
