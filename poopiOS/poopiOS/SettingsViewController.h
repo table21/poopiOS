@@ -10,4 +10,7 @@
 
 @interface SettingsViewController : UIViewController
 
+@property (strong, nonatomic) NSNumber *unisex;
+@property (strong, nonatomic) NSNumber *disabled;
+
 @end

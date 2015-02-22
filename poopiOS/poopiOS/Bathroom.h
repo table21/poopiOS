@@ -10,10 +10,19 @@
 
 @interface Bathroom : NSObject
 
+@property (strong, nonatomic) NSString *id;
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *directions;
+@property (strong, nonatomic) NSNumber *disabled;
+@property (strong, nonatomic) NSNumber *unisex;
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
+
+@property (strong, nonatomic) NSNumber *one;
+@property (strong, nonatomic) NSNumber *two;
+@property (strong, nonatomic) NSNumber *clean;
+@property (strong, nonatomic) NSNumber *smell;
+
+@property (strong, nonatomic) NSMutableArray *comments;
 
 + (void)getBathrooms:(NSDictionary *)options completion:(void (^)(NSMutableArray *bathrooms))completion;
 

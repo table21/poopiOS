@@ -10,4 +10,9 @@
 
 @interface MapViewController : UIViewController
 
+@property (strong, nonatomic) NSNumber *unisex;
+@property (strong, nonatomic) NSNumber *disabled;
+
+- (void)loadBathrooms:(NSMutableDictionary *)options;
+
 @end

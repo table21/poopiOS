@@ -7,8 +7,12 @@
 //
 
 #import "SettingsViewController.h"
+#import "MapViewController.h"
 
 @interface SettingsViewController ()
+@property (weak, nonatomic) IBOutlet UISwitch *disabledSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *unisexSwitch;
+@property (weak, nonatomic) IBOutlet UISlider *distanceSlider;
 
 @end
 
@@ -16,12 +20,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.unisexSwitch setOn:[self.unisex boolValue]];
+    [self.disabledSwitch setOn:[self.disabled boolValue]];
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)done:(id)sender {
+    MapViewController *mapViewController = (MapViewController *)self.presentingViewController;
+    NSMutableDictionary *options = [NSMutableDictionary new];
+    options[@"disabled"] = [NSNumber numberWithBool:self.disabledSwitch.on];
+    options[@"unisex"] = [NSNumber numberWithBool:self.unisexSwitch.on];
+    [mapViewController loadBathrooms:options];
+    mapViewController.unisex = [NSNumber numberWithBool:self.unisexSwitch.on];
+    mapViewController.disabled = [NSNumber numberWithBool:self.disabledSwitch.on];
+    [mapViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

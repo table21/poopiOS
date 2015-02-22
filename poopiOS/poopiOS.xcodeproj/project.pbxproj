@@ -16,6 +16,12 @@
 		39852E451A98969C005DE617 /* poopiOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 39852E441A98969C005DE617 /* poopiOSTests.m */; };
 		E7AC75851A989D0E00072E97 /* Bathroom.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AC75841A989D0E00072E97 /* Bathroom.m */; };
 		E7AC75891A98AB1800072E97 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AC75881A98AB1800072E97 /* SettingsViewController.m */; };
+		E7AC758C1A99069300072E97 /* BathroomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AC758B1A99069300072E97 /* BathroomAnnotation.m */; };
+		E7AC758F1A99083200072E97 /* UpdateBathroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AC758E1A99083200072E97 /* UpdateBathroomViewController.m */; };
+		E7AC75981A990C0E00072E97 /* EDStarRating.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AC75971A990C0E00072E97 /* EDStarRating.m */; };
+		E7AC759B1A991BB500072E97 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AC759A1A991BB500072E97 /* CommentsViewController.m */; };
+		E7AC75B81A99717000072E97 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AC75B71A99717000072E97 /* Comment.m */; };
+		E7AC75BB1A9978D300072E97 /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AC75BA1A9978D300072E97 /* CommentTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,18 @@
 		E7AC75841A989D0E00072E97 /* Bathroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bathroom.m; sourceTree = "<group>"; };
 		E7AC75871A98AB1800072E97 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		E7AC75881A98AB1800072E97 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		E7AC758A1A99069300072E97 /* BathroomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BathroomAnnotation.h; sourceTree = "<group>"; };
+		E7AC758B1A99069300072E97 /* BathroomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BathroomAnnotation.m; sourceTree = "<group>"; };
+		E7AC758D1A99083200072E97 /* UpdateBathroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateBathroomViewController.h; sourceTree = "<group>"; };
+		E7AC758E1A99083200072E97 /* UpdateBathroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateBathroomViewController.m; sourceTree = "<group>"; };
+		E7AC75961A990C0E00072E97 /* EDStarRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EDStarRating.h; path = poopiOS/EDStarRating.h; sourceTree = "<group>"; };
+		E7AC75971A990C0E00072E97 /* EDStarRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EDStarRating.m; path = poopiOS/EDStarRating.m; sourceTree = "<group>"; };
+		E7AC75991A991BB500072E97 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		E7AC759A1A991BB500072E97 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		E7AC75B61A99717000072E97 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		E7AC75B71A99717000072E97 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		E7AC75B91A9978D300072E97 /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		E7AC75BA1A9978D300072E97 /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +87,8 @@
 		39852E1C1A98969C005DE617 = {
 			isa = PBXGroup;
 			children = (
+				E7AC75961A990C0E00072E97 /* EDStarRating.h */,
+				E7AC75971A990C0E00072E97 /* EDStarRating.m */,
 				39852E271A98969C005DE617 /* poopiOS */,
 				39852E411A98969C005DE617 /* poopiOSTests */,
 				39852E261A98969C005DE617 /* Products */,
@@ -87,12 +107,9 @@
 		39852E271A98969C005DE617 /* poopiOS */ = {
 			isa = PBXGroup;
 			children = (
-				E7AC75821A98979E00072E97 /* AppDelegate */,
-				39852E2F1A98969C005DE617 /* MapViewController.h */,
-				39852E301A98969C005DE617 /* MapViewController.m */,
 				39852E321A98969C005DE617 /* Main.storyboard */,
-				E7AC75871A98AB1800072E97 /* SettingsViewController.h */,
-				E7AC75881A98AB1800072E97 /* SettingsViewController.m */,
+				E7AC75821A98979E00072E97 /* AppDelegate */,
+				E7AC75BC1A99D5B000072E97 /* Bathroom */,
 				39852E351A98969C005DE617 /* Images.xcassets */,
 				39852E371A98969C005DE617 /* LaunchScreen.xib */,
 				E7AC75861A989D1300072E97 /* Models */,
@@ -141,8 +158,53 @@
 			children = (
 				E7AC75831A989D0E00072E97 /* Bathroom.h */,
 				E7AC75841A989D0E00072E97 /* Bathroom.m */,
+				E7AC75B61A99717000072E97 /* Comment.h */,
+				E7AC75B71A99717000072E97 /* Comment.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		E7AC75901A99083800072E97 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				39852E2F1A98969C005DE617 /* MapViewController.h */,
+				39852E301A98969C005DE617 /* MapViewController.m */,
+				E7AC758A1A99069300072E97 /* BathroomAnnotation.h */,
+				E7AC758B1A99069300072E97 /* BathroomAnnotation.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		E7AC75911A99084000072E97 /* Callout */ = {
+			isa = PBXGroup;
+			children = (
+				E7AC758D1A99083200072E97 /* UpdateBathroomViewController.h */,
+				E7AC758E1A99083200072E97 /* UpdateBathroomViewController.m */,
+				E7AC75991A991BB500072E97 /* CommentsViewController.h */,
+				E7AC759A1A991BB500072E97 /* CommentsViewController.m */,
+				E7AC75B91A9978D300072E97 /* CommentTableViewCell.h */,
+				E7AC75BA1A9978D300072E97 /* CommentTableViewCell.m */,
+			);
+			name = Callout;
+			sourceTree = "<group>";
+		};
+		E7AC75921A99084800072E97 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				E7AC75871A98AB1800072E97 /* SettingsViewController.h */,
+				E7AC75881A98AB1800072E97 /* SettingsViewController.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		E7AC75BC1A99D5B000072E97 /* Bathroom */ = {
+			isa = PBXGroup;
+			children = (
+				E7AC75901A99083800072E97 /* Map */,
+				E7AC75911A99084000072E97 /* Callout */,
+				E7AC75921A99084800072E97 /* Search */,
+			);
+			name = Bathroom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,7 +308,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				39852E311A98969C005DE617 /* MapViewController.m in Sources */,
+				E7AC75981A990C0E00072E97 /* EDStarRating.m in Sources */,
+				E7AC758F1A99083200072E97 /* UpdateBathroomViewController.m in Sources */,
+				E7AC75B81A99717000072E97 /* Comment.m in Sources */,
 				E7AC75851A989D0E00072E97 /* Bathroom.m in Sources */,
+				E7AC758C1A99069300072E97 /* BathroomAnnotation.m in Sources */,
+				E7AC75BB1A9978D300072E97 /* CommentTableViewCell.m in Sources */,
+				E7AC759B1A991BB500072E97 /* CommentsViewController.m in Sources */,
 				E7AC75891A98AB1800072E97 /* SettingsViewController.m in Sources */,
 				39852E2E1A98969C005DE617 /* AppDelegate.m in Sources */,
 				39852E2B1A98969C005DE617 /* main.m in Sources */,
@@ -371,6 +439,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = poopiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,6 +453,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = poopiOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
