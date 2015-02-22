@@ -46,7 +46,7 @@
     NSURLComponents *components = [NSURLComponents new];
     [components setScheme:@"https"];
     [components setHost:@"desolate-fortress-4361.herokuapp.com"];
-    [components setPath:@"/search"];
+    [components setPath:@"/search_bathrooms"];
     
     CLLocation *location = options[@"location"];
     

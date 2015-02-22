@@ -99,13 +99,13 @@
     MKDirectionsRequest *request = [MKDirectionsRequest new];
     [request setSource:[[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:self.locationManager.location.coordinate addressDictionary:nil]]];
     
-//    NSLog(@"%f %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
+    NSLog(@"%f %f", self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
     
     Bathroom *bathroom = self.bathrooms[self.index];
     
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([bathroom.latitude doubleValue], [bathroom.longitude doubleValue]);
     
-//    NSLog(@"%f %f", [bathroom.latitude doubleValue], [bathroom.longitude doubleValue]);
+    NSLog(@"%f %f", [bathroom.latitude doubleValue], [bathroom.longitude doubleValue]);
     
     [request setDestination:[[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil]]];
     
