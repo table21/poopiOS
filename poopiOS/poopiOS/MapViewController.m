@@ -22,10 +22,16 @@
 
 @property (strong, nonatomic) NSMutableArray *bathrooms;
 @property NSInteger index;
+@property (strong, nonatomic) NSNumber *mode;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 @property (weak, nonatomic) IBOutlet UILabel *indexLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *bathroomView;
+@property (weak, nonatomic) IBOutlet UIView *pizzaView;
+@property (weak, nonatomic) IBOutlet UIView *parkingView;
+@property (weak, nonatomic) IBOutlet UIView *hotelView;
 
 @end
 
@@ -52,17 +58,91 @@
     if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_7_1) {
         [self.locationManager requestWhenInUseAuthorization];
     }
-    
-    [self loadBathrooms:[NSMutableDictionary new]];
+}
+
+- (IBAction)search:(id)sender {
+    [self.parkingView setHidden:NO];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.parkingView.frame = CGRectMake(0, 0, self.view.frame.size.width / 2, self.view.frame.size.height / 2);
+        [self.parkingView setAlpha:1];
+    } completion:^(BOOL finished) {
+        [self.pizzaView setHidden:NO];
+        [UIView animateWithDuration:0.2 animations:^{
+            self.pizzaView.frame = CGRectMake(self.view.frame.size.width / 2, 0, self.view.frame.size.width / 2, self.view.frame.size.height / 2);
+            [self.pizzaView setAlpha:1];
+        } completion:^(BOOL finished) {
+            [self.bathroomView setHidden:NO];
+            [UIView animateWithDuration:0.2 animations:^{
+                self.bathroomView.frame = CGRectMake(self.view.frame.size.width / 2, self.view.frame.size.height / 2, self.view.frame.size.width / 2, self.view.frame.size.height / 2);
+                [self.bathroomView setAlpha:1];
+            } completion:^(BOOL finished) {
+                [self.hotelView setHidden:NO];
+                [UIView animateWithDuration:0.2 animations:^{
+                    self.hotelView.frame = CGRectMake(0, self.view.frame.size.height / 2, self.view.frame.size.width / 2, self.view.frame.size.height / 2);
+                    [self.hotelView setAlpha:1];
+                } completion:nil];
+            }];
+        }];
+    }];
 }
 
 - (IBAction)parking:(id)sender {
+    NSLog(@"loading parking");
+    self.mode = @0;
+    [self loadParkings:[NSMutableDictionary new]];
+    [self removeViews];
 }
+
 - (IBAction)pizza:(id)sender {
+    NSLog(@"loading pizza");
+    self.mode = @1;
+    [self loadPizzas:[NSMutableDictionary new]];
+    [self removeViews];
 }
+
 - (IBAction)bathroom:(id)sender {
+    NSLog(@"loading bathroom");
+    self.mode = @2;
+    [self loadBathrooms:[NSMutableDictionary new]];
+    [self removeViews];
 }
+
 - (IBAction)hotel:(id)sender {
+    NSLog(@"hotel");
+    self.mode = @3;
+    [self loadHotels:[NSMutableDictionary new]];
+    [self removeViews];
+}
+
+- (void)removeViews {
+    CGPoint topRight = CGPointMake(self.view.frame.size.width, 0);
+    CGPoint bottomRight = CGPointMake(self.view.frame.size.width, self.view.frame.size.height);
+    CGPoint bottomLeft = CGPointMake(0, self.view.frame.size.height);
+    [UIView animateWithDuration:0.2 animations:^{
+        self.parkingView.frame = CGRectMake(0, 0, 0, 0);
+        [self.parkingView setAlpha:0];
+    } completion:^(BOOL finished) {
+        [self.parkingView setHidden:YES];
+        [UIView animateWithDuration:0.2 animations:^{
+            self.pizzaView.frame = CGRectMake(topRight.x, topRight.y, 0, 0);
+            [self.pizzaView setAlpha:0];
+        } completion:^(BOOL finished) {
+            [self.pizzaView setHidden:YES];
+            [UIView animateWithDuration:0.2 animations:^{
+                self.bathroomView.frame = CGRectMake(bottomRight.x, bottomRight.y, 0, 0);
+                [self.bathroomView setAlpha:0];
+            } completion:^(BOOL finished) {
+                [self.bathroomView setHidden:YES];
+                [UIView animateWithDuration:0.2 animations:^{
+                    self.hotelView.frame = CGRectMake(bottomLeft.x, bottomLeft.y, 0, 0);
+                    [self.hotelView setAlpha:0];
+                } completion:^(BOOL finished) {
+                    [self.hotelView setHidden:YES];
+                }];
+            }];
+        }];
+    }];
+    
 }
 
 #pragma mark - Bathroom loading
@@ -72,8 +152,85 @@
     options[@"location"] = self.locationManager.location;
     options[@"unisex"] = self.unisex;
     options[@"disabled"] = self.disabled;
+    switch ([self.mode intValue]) {
+        case 0:
+            [self loadParkings:options];
+            break;
+        case 1:
+            [self loadPizzas:options];
+            break;
+        case 2:
+            [self loadBathrooms:options];
+            break;
+        case 3:
+            [self loadHotels:options];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)loadPizzas:(NSMutableDictionary *)options {
+    [self.activityIndicatorView startAnimating];
+    CLLocation *location;
+    if (self.locationManager.location == nil) {
+        location = [[CLLocation alloc] initWithLatitude:37.4300198 longitude:-122.1736329];
+    } else {
+        location = self.locationManager.location;
+    }
     
-    [self loadBathrooms:options];
+    options[@"location"] = location;
+    
+    options[@"type"] = @"pizza";
+    
+    [Bathroom getBathrooms:options completion:^(NSMutableArray *bathrooms) {
+        self.bathrooms = bathrooms;
+        self.index = 0;
+        [self.indexLabel setText:[NSString stringWithFormat:@"%@ / 5", [[NSNumber numberWithInteger:self.index + 1] stringValue]]];
+        [self loadDirections];
+    }];
+}
+
+- (void)loadParkings:(NSMutableDictionary *)options {
+    [self.activityIndicatorView startAnimating];
+    CLLocation *location;
+    if (self.locationManager.location == nil) {
+        location = [[CLLocation alloc] initWithLatitude:37.4300198 longitude:-122.1736329];
+    } else {
+        location = self.locationManager.location;
+    }
+    
+    options[@"location"] = location;
+    
+    options[@"type"] = @"parking";
+    
+    [Bathroom getBathrooms:options completion:^(NSMutableArray *bathrooms) {
+        self.bathrooms = bathrooms;
+        self.index = 0;
+        [self.indexLabel setText:[NSString stringWithFormat:@"%@ / 5", [[NSNumber numberWithInteger:self.index + 1] stringValue]]];
+        [self loadDirections];
+    }];
+}
+
+- (void)loadHotels:(NSMutableDictionary *)options {
+    [self.activityIndicatorView startAnimating];
+    CLLocation *location;
+    if (self.locationManager.location == nil) {
+        location = [[CLLocation alloc] initWithLatitude:37.4300198 longitude:-122.1736329];
+    } else {
+        location = self.locationManager.location;
+    }
+    
+    options[@"location"] = location;
+    
+    options[@"type"] = @"hotel";
+    
+    [Bathroom getBathrooms:options completion:^(NSMutableArray *bathrooms) {
+        self.bathrooms = bathrooms;
+        self.index = 0;
+        [self.indexLabel setText:[NSString stringWithFormat:@"%@ / 5", [[NSNumber numberWithInteger:self.index + 1] stringValue]]];
+        [self loadDirections];
+    }];
 }
 
 - (void)loadBathrooms:(NSMutableDictionary *)options{
@@ -86,6 +243,8 @@
     }
     
     options[@"location"] = location;
+    
+    options[@"type"] = @"bathroom";
     
     [Bathroom getBathrooms:options completion:^(NSMutableArray *bathrooms) {
         self.bathrooms = bathrooms;
@@ -109,7 +268,9 @@
     
     [request setDestination:[[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil]]];
     
-    [request setTransportType:MKDirectionsTransportTypeWalking];
+    if ([self.mode intValue] == 2) {
+        [request setTransportType:MKDirectionsTransportTypeWalking];
+    }
     
     [[[MKDirections alloc] initWithRequest:request] calculateDirectionsWithCompletionHandler:^(MKDirectionsResponse *response, NSError *error) {
         if (error) {

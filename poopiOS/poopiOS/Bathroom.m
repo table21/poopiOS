@@ -46,7 +46,15 @@
     NSURLComponents *components = [NSURLComponents new];
     [components setScheme:@"https"];
     [components setHost:@"desolate-fortress-4361.herokuapp.com"];
-    [components setPath:@"/search_bathrooms"];
+    if ([options[@"type"] isEqualToString:@"parking"]) {
+        [components setPath:@"/search_parkings"];
+    } else if ([options[@"type"] isEqualToString:@"pizza"]) {
+        [components setPath:@"/search_pizzas"];
+    } else if ([options[@"type"] isEqualToString:@"bathroom"]) {
+        [components setPath:@"/search_bathrooms"];
+    } else if ([options[@"type"] isEqualToString:@"hotel"]) {
+        [components setPath:@"/search_hotels"];
+    }
     
     CLLocation *location = options[@"location"];
     
